@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:prod_software_rutinator/pantallas/pantalla1.dart';
 import 'package:prod_software_rutinator/pantallas/pantalla2.dart';
 import 'package:prod_software_rutinator/pantallas/pantalla3.dart';
