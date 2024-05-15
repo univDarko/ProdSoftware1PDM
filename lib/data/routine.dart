@@ -1,12 +1,12 @@
 
 class Routine{
 
-  String? title;
-  String? descr;
-  bool? isdone;
-  String? whoiscompleting;
+  String title = "null";
+  String descr = "null";
+  bool isdone = false;
+  String whoiscompleting = "null";
 
-  routine(String title_, String desc, String name){
+  Routine(String title_, String desc, String name){
     title = title_;
     descr = desc;
     isdone = false;
@@ -14,20 +14,20 @@ class Routine{
   }
 
   String showTitle(){
-    return title!;
+    return title;
   }
 
   String showDescription(){
-    return descr!;
+    return descr;
   }
 
-  bool toggleState() => !isdone!;
+  bool toggleState() => !isdone;
 
   bool showStateCompletion(){
-    return isdone!;
+    return isdone;
   }
 
   String showUserCompletingRoutine(){
-    return whoiscompleting!;
+    return whoiscompleting;
   }
 }

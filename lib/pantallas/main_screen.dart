@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:prod_software_rutinator/pantallas/login_screen.dart';
 import 'package:prod_software_rutinator/pantallas/screen1.dart';
 import 'package:prod_software_rutinator/pantallas/screen2.dart';
 import 'package:prod_software_rutinator/pantallas/screen3.dart';
 import 'package:prod_software_rutinator/data/userdatabase.dart';
-import 'package:prod_software_rutinator/data/user.dart';
 
 class MainScreen extends StatelessWidget{
 
@@ -42,6 +41,23 @@ class MyMainScreen extends State<MyHomePage> {
 
   final Userdatabase userdb;
   int _currentIndex = 0;
+
+  Color textColor = Colors.white;
+  void _changeTextColor(){
+    setState(() {
+      switch(_currentIndex){
+        case 0:
+          textColor = Colors.white;
+        break;
+        case 1:
+          textColor = Colors.black;
+        break;
+        case 2:
+          textColor = Colors.white;
+        break;
+      }
+    });
+  }
   
 
   PageController _pageController = PageController(initialPage: 0);
@@ -51,7 +67,11 @@ class MyMainScreen extends State<MyHomePage> {
   }
 
   final _navItems = [
-    NavigationDestination(icon: Image.asset('assets/brawlAssets/brawlicon.png', width: 30, height: 30,), label: "Brawl Stars"),
+    NavigationDestination(icon: ClipRRect(
+      borderRadius: BorderRadius.circular(8.0),
+      child: Image.asset('assets/brawlAssets/brawlicon.png', width: 30, height: 30,)
+      ), 
+      label: "Brawl Stars"),
     NavigationDestination(icon: ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
       child: Image.asset('assets/CCAssets/clashclansicon.png', width: 30, height: 30,)
@@ -75,7 +95,7 @@ class MyMainScreen extends State<MyHomePage> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text("Hola, ${getCurrentName()}",
-          selectionColor: _currentIndex == 0 ? Colors.black : Colors.white),
+          style: TextStyle(color: textColor),),
         ),
         body: PageView(
           controller: _pageController,
@@ -83,11 +103,12 @@ class MyMainScreen extends State<MyHomePage> {
             setState(() {
               _currentIndex = newIndex;
             });
+            _changeTextColor();
           },
-          children: const [
-            Pantalla1(),
-            Pantalla2(),
-            Pantalla3()
+          children: [
+            Screen1(userdb: userdb,),
+            Screen2(userdb: userdb,),
+            Screen3(userdb: userdb,)
           ],
         ),
         bottomNavigationBar: NavigationBar(
@@ -102,6 +123,33 @@ class MyMainScreen extends State<MyHomePage> {
           surfaceTintColor: Colors.blue,
           indicatorColor: Colors.amber,
           shadowColor: Colors.amberAccent,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: const EdgeInsets.all(0),
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(getCurrentName(), 
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary.computeLuminance() > 0.5 ? Colors.black : Colors.white)), 
+                accountEmail: null,
+                currentAccountPicture: const Icon(Icons.face),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.inversePrimary
+                  ),
+                ),
+              Card(
+                child: ListTile(
+                        title: const Text('Cerrar Sesión'),
+                        onTap: () {Navigator.pushAndRemoveUntil(
+                          context, 
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => const LoginScreen()), 
+                          (route) => false);},
+                      ),
+              ),
+            ]
+          )
         ),
       ),
     );
