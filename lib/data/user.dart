@@ -2,6 +2,7 @@
 
 class User{
 
+  // ignore: unused_field
   String? _name;
   String? surname;
   String? username;

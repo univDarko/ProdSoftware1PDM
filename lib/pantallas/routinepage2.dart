@@ -8,6 +8,7 @@ const String clashclansinfo = "Clash of Clans "
 "y el 8 de octubre para dispositivos Android. En este mismo juego se basó "
 "Clash Royale.";
 
+// ignore: must_be_immutable
 class RoutinePage2 extends StatelessWidget{
   RoutinePage2({super.key, required this.userdb});
 

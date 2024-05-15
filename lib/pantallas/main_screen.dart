@@ -96,6 +96,7 @@ class MyMainScreen extends State<MyHomePage> {
           backgroundColor: Colors.transparent,
           title: Text("Hola, ${getCurrentName()}",
           style: TextStyle(color: textColor),),
+          iconTheme: IconThemeData(color: textColor)
         ),
         body: PageView(
           controller: _pageController,
@@ -125,6 +126,7 @@ class MyMainScreen extends State<MyHomePage> {
           shadowColor: Colors.amberAccent,
         ),
         drawer: Drawer(
+          backgroundColor: Colors.white,
           child: ListView(
             padding: const EdgeInsets.all(0),
             children: [

@@ -8,6 +8,7 @@ const String brawlInfo = "Brawl Stars es un videojuego multijugador "
 "visuales con grandes detalles interesantes y diferentes funcionalidades. "
 "Actualmente lleva 5 años de existencia en el mundo de los videojuegos móviles.";
 
+// ignore: must_be_immutable
 class RoutinePage1 extends StatelessWidget{
   RoutinePage1({super.key, required this.userdb});
 
