@@ -61,7 +61,7 @@ class _MyStatefulLoginPage extends State<StatefulLoginPage> {
           title: const Text(
             "Rutinator",
             style: TextStyle(
-              color: Colors.blue,
+              color: Color.fromARGB(255, 237, 28, 36),
               fontWeight: FontWeight.w500,
               fontSize: 25
             )
