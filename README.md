@@ -25,4 +25,5 @@ En este caso, esta maqueta es un creador de rutinas y/o practicas de videojuegos
 
 ## Diagrama de Clases
 
-![Diagrama Clases PDM](https://github.com/univDarko/ProdSoftware1PDM/assets/118616932/c19684c4-5595-455a-b9aa-26074d65c310)
+![Diagrama clases 1](https://github.com/univDarko/ProdSoftware1PDM/assets/118616932/5c0102ab-8fe1-460a-9538-70a466a4a82e)
+
