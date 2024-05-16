@@ -6,6 +6,8 @@ En este caso, esta maqueta es un creador de rutinas y/o practicas de videojuegos
 
 ## Link a Video
 
+https://github.com/univDarko/ProdSoftware1PDM/assets/118616932/822c0726-4f6b-4caa-92f7-55a437e638c3
+
 ## Requerimientos Funcionales
 
 - Navegación de Menús
