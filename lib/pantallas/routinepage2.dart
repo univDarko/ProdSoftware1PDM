@@ -31,7 +31,7 @@ class RoutinePage2 extends StatelessWidget{
       ),
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 169, 169, 11)
+          backgroundColor: const Color.fromARGB(255, 169, 169, 11)
         ),
         body: LayoutBuilder(
           builder: (context, constraints) => ListView(
